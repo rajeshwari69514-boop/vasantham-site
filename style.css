@@ -1,0 +1,152 @@
+/* ============================================================
+   1. GLOBAL RESET & BASE STYLES
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Padding add panna width expand aagatha maari fix */
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    /* Horizontal scroll-a thadukka */
+    font-family: sans-serif;
+    /* Unga default font-a inga mathikonga */
+}
+
+/* ============================================================
+   2. HEADER & NAVIGATION (MOBILE FIRST & RESPONSIVE)
+   ============================================================ */
+header {
+    width: 100%;
+    display: block;
+    background: white;
+}
+
+nav {
+    width: 100% !important;
+    background: white !important;
+    border-bottom: 5px solid #ffd700 !important;
+    /* Gold Line */
+    display: flex !important;
+    flex-direction: column !important;
+    /* Mobile-la Logo mela, Menu keela */
+    align-items: center !important;
+    padding: 15px 0 !important;
+    position: relative !important;
+}
+
+/* Logo container - Unga HTML-la logo-vuku intha class kudunga */
+.nav-logo,
+.logo-container {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    /* Space pathalana items auto-va keela varum */
+    justify-content: center !important;
+    width: 100% !important;
+    list-style: none !important;
+    padding: 0 10px !important;
+    /* Side gaps for 'Contact' */
+    margin: 10px 0 0 0 !important;
+}
+
+.nav-links li {
+    margin: 5px 8px !important;
+    /* Items-ku naduvula sariyaana gap */
+}
+
+.nav-links li a {
+    text-decoration: none !important;
+    color: #b01e68 !important;
+    /* Maroon/Pink Color */
+    font-weight: bold !important;
+    font-size: 14px !important;
+    white-space: nowrap;
+    /* Text break aagatha maari */
+}
+
+/* ============================================================
+   3. CONTENT AREA
+   ============================================================ */
+.content-area {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    /* Mobile-la content vertical-ah varum */
+    align-items: center !important;
+    text-align: center !important;
+    padding: 20px !important;
+}
+
+.hero-title {
+    font-size: 2rem !important;
+    width: 100% !important;
+    color: #b01e68 !important;
+    margin-bottom: 15px;
+}
+
+/* ============================================================
+   4. DESKTOP VIEW (Larger Screens)
+   ============================================================ */
+@media only screen and (min-width: 768px) {
+    nav {
+        flex-direction: row !important;
+        /* Desktop-la logo and menu side-by-side */
+        justify-content: space-between !important;
+        padding: 15px 5% !important;
+    }
+
+    .nav-links {
+        width: auto !important;
+        margin-top: 0 !important;
+    }
+
+    .nav-links li a {
+        font-size: 16px !important;
+    }
+
+    .hero-title {
+        font-size: 3rem !important;
+    }
+}
+
+/* Mobile Responsive Modal Fix */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+    /* Phone-la mela kila scroll panna idhu dhaan mukkiyam */
+    padding-top: 20px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    /* Mobile-la side gaps kuraika */
+    max-width: 400px;
+    position: relative;
+}
+
+@media screen and (max-height: 700px) {
+    .modal-content {
+        margin: 2% auto;
+        /* Height kuraiva irukura phone-la gap kuraikum */
+    }
+}
